@@ -37,5 +37,10 @@ public class EmployeesControllerTest {
 						json("{\"name\": \"Ardi\",\"gender\": \"Male\"}"));
 		
 	}
+	
+	@Test
+	public void getWrongEmployees() throws Exception{
+		this.mockMvc.perform(get("/employees/100")).andExpect(status().isNotFound());
+	}
 
 }
